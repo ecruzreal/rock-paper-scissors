@@ -78,8 +78,10 @@ function playGame(){
 
     if (humanScore > computerScore){
         console.log("You win!")
-    } else {
+    } else if (computerScore > humanScore){
         console.log("Computer wins!")
+    } else{
+        console.log("Draw!")
     }
 
 }
