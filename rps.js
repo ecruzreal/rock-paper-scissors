@@ -67,8 +67,22 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+function playGame(){
 
-playRound(humanSelection, computerSelection)
+    for (let i = 1; i <=5; i++){
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+
+        playRound(humanSelection, computerSelection)
+    }
+
+    if (humanScore > computerScore){
+        console.log("You win!")
+    } else {
+        console.log("Computer wins!")
+    }
+
+}
+
+playGame()
 
