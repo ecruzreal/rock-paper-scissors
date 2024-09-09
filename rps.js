@@ -20,15 +20,6 @@ function getComputerChoice(){
 
 }
 
-function getHumanChoice(choice){
-    if (choice === "rock"){
-        return "rock"
-    } else if (choice === "paper"){
-        return "paper"
-    } else if (choice === "scissors"){
-        return "scissors"
-    }
-}
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock"){
@@ -85,27 +76,3 @@ buttons.forEach((button) => {
         playRound(button.id, getComputerChoice())
     })
 })
-
-/*
-function playGame(){
-
-    for (let i = 1; i <=5; i++){
-        const humanSelection = getHumanChoice()
-        const computerSelection = getComputerChoice()
-
-        playRound(humanSelection, computerSelection)
-    }
-
-    if (humanScore > computerScore){
-        console.log("You win!")
-    } else if (computerScore > humanScore){
-        console.log("Computer wins!")
-    } else{
-        console.log("Draw!")
-    }
-
-}
-
-playGame()
-*/
-
