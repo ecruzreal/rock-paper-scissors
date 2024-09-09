@@ -16,20 +16,13 @@ function getComputerChoice(){
 
 }
 
-function getHumanChoice(){
-    let choice
-    let options = ["rock", "paper", "scissors"]
-    
-    while(!options.includes(choice)){
-        choice = prompt("What will you choose? (rock, paper, or scissors): ")
-        choice = choice.toLowerCase()
-        if (choice === "rock"){
-            return "rock"
-        } else if (choice === "paper"){
-            return "paper"
-        } else if (choice === "scissors"){
-            return "scissors"
-        }
+function getHumanChoice(choice){
+    if (choice === "rock"){
+        return "rock"
+    } else if (choice === "paper"){
+        return "paper"
+    } else if (choice === "scissors"){
+        return "scissors"
     }
 }
 
@@ -66,6 +59,15 @@ function playRound(humanChoice, computerChoice){
         }
     }
 }
+
+
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playRound(button.id, getComputerChoice())
+    })
+})
 
 /*
 function playGame(){
