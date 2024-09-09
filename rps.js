@@ -1,6 +1,7 @@
 
 let humanScore = 0
 let computerScore = 0
+const results = document.querySelector('.results')
 
 function getComputerChoice(){
     let num = Math.floor(Math.random() * 3)
@@ -29,37 +30,36 @@ function getHumanChoice(choice){
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock"){
         if (computerChoice === "scissors"){
-            console.log("You win! Rock beats scissors!")
+            results.textContent = "You win! Rock beats scissors!"
             humanScore++
         } else if (computerChoice === "paper"){
-            console.log("You lose! Paper beats rock!")
+            results.textContent = "You lose! Paper beats rock!"
             computerScore++
         } else{
-            console.log("Draw! No points awarded!")
+            results.textContent = "Draw! No points awarded!"
         }
     } else if (humanChoice === "paper"){
         if(computerChoice === "scissors"){
-            console.log("You lose! Scissors beats paper!")
+            results.textContent = "You lose! Scissors beats paper!"
             computerScore++
          } else if(computerChoice === "rock"){
-            console.log("You win! Paper beats rock!")
+            results.textContent = "You win! Paper beats rock!"
             humanScore++
          } else{
-            console.log("Draw! No points awarded!")
+            results.textContent = "Draw! No points awarded!"
          }
     } else{
         if(computerChoice === "rock"){
-            console.log("You lose! Rock beats scissors!")
+            results.textContent = "You lose! Rock beats scissors!"
             computerScore++
         } else if (computerChoice === "paper") {
-            console.log("You win! Scissors beats paper!")
+            results.textContent = "You win! Scissors beats paper!"
             humanScore++
         } else{
-            console.log("Draw! No points awarded!")
+            results.textContent = "Draw! No points awarded!"
         }
     }
 }
-
 
 const buttons = document.querySelectorAll('button')
 
