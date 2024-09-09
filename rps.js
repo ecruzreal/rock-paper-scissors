@@ -2,6 +2,9 @@
 let humanScore = 0
 let computerScore = 0
 const results = document.querySelector('.results')
+const human_score = document.querySelector('#human-score')
+const computer_score = document.querySelector('#computer-score')
+
 
 function getComputerChoice(){
     let num = Math.floor(Math.random() * 3)
@@ -59,6 +62,20 @@ function playRound(humanChoice, computerChoice){
             results.textContent = "Draw! No points awarded!"
         }
     }
+
+    human_score.textContent = "You: " + humanScore;
+    computer_score.textContent = "Computer: " + computerScore;
+
+    if (humanScore >= 5){
+        results.textContent = "You win!"
+        humanScore = 0
+        computerScore = 0
+    } else if (computerScore >= 5){
+        results.textContent = "Computer wins!"
+        humanScore = 0
+        computerScore = 0
+    }
+
 }
 
 const buttons = document.querySelectorAll('button')
